@@ -20,7 +20,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xfffef2fe),
+        backgroundColor: const Color(0xFFFFFFFF),
         body: Padding(
           padding: const EdgeInsets.only(
             left: 20,
@@ -97,7 +97,7 @@ class _CartScreenState extends State<CartScreen> {
                                   context: context,
                                   isScrollControlled: true,
                                   backgroundColor:
-                                  const Color(0xFAF8FAFF),
+                                  const Color(0xFFFFFFFF),
                                   shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(40),

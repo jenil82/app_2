@@ -33,7 +33,7 @@ class HomeController extends GetxController {
         title: ("Home"),
         activeColorPrimary: Colors.black,
         inactiveColorPrimary: Colors.black,
-        textStyle: GoogleFonts.secularOne(
+        textStyle: TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 14,
           color: Colors.black,
@@ -44,7 +44,7 @@ class HomeController extends GetxController {
         title: ("Search"),
         activeColorPrimary: Colors.black,
         inactiveColorPrimary: Colors.black,
-        textStyle: GoogleFonts.secularOne(
+        textStyle: TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 14,
           color: Colors.black,
@@ -55,7 +55,7 @@ class HomeController extends GetxController {
         title: ("Cart"),
         activeColorPrimary: Colors.black,
         inactiveColorPrimary: Colors.black,
-        textStyle: GoogleFonts.secularOne(
+        textStyle: TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 14,
           color: Colors.black,
@@ -66,7 +66,7 @@ class HomeController extends GetxController {
         title: ("Profile"),
         activeColorPrimary: Colors.black,
         inactiveColorPrimary: Colors.black,
-        textStyle: GoogleFonts.secularOne(
+        textStyle: TextStyle(
           fontWeight: FontWeight.w500,
           fontSize: 14,
           color: Colors.black,
