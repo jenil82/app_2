@@ -16,8 +16,6 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  TextEditingController fnamec = TextEditingController();
-  TextEditingController lnamec = TextEditingController();
   TextEditingController emailc = TextEditingController();
   TextEditingController passwordc = TextEditingController();
   HomeController homeController = Get.put(
@@ -68,7 +66,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
-                                color: Colors.white,
+                                color: Colors.black,
                                 letterSpacing: 1,
                               ),
                             ),
@@ -119,97 +117,6 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                             child: Row(
                               children: [
-                                Expanded(
-                                  child: TextField(
-                                    controller: fnamec,
-                                    textInputAction: TextInputAction.next,
-                                    cursorColor: Colors.black,
-                                    style: GoogleFonts.secularOne(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: "First Name",
-                                      hintStyle: GoogleFonts.secularOne(
-                                        color: Colors.black.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      border: InputBorder.none,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 65,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 3,
-                            ),
-                            color: const Color(0xFFFFFFFF),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 20,
-                              right: 20,
-                            ),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 15,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    controller: lnamec,
-                                    textInputAction: TextInputAction.next,
-                                    cursorColor: Colors.black,
-                                    style: GoogleFonts.secularOne(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: "Last Name",
-                                      hintStyle: GoogleFonts.secularOne(
-                                        color: Colors.black.withOpacity(0.6),
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      border: InputBorder.none,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 65,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 3,
-                            ),
-                            color: const Color(0xFFFFFFFF),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 20,
-                              right: 20,
-                            ),
-                            child: Row(
-                              children: [
                                 const Padding(
                                   padding: EdgeInsets.only(
                                     top: 10,
@@ -229,13 +136,13 @@ class _SignupScreenState extends State<SignupScreen> {
                                     controller: emailc,
                                     textInputAction: TextInputAction.next,
                                     cursorColor: Colors.black,
-                                    style: GoogleFonts.secularOne(
+                                    style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     decoration: InputDecoration(
                                       hintText: "Email",
-                                      hintStyle: GoogleFonts.secularOne(
+                                      hintStyle: TextStyle(
                                         color: Colors.black.withOpacity(0.6),
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -284,12 +191,12 @@ class _SignupScreenState extends State<SignupScreen> {
                                 ),
                                 Expanded(
                                   child: Obx(
-                                        () => TextField(
+                                    () => TextField(
                                       controller: passwordc,
                                       obscureText:
-                                      homeController.signinEye.value,
+                                          homeController.signinEye.value,
                                       cursorColor: Colors.black,
-                                      style: GoogleFonts.secularOne(
+                                      style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -297,17 +204,17 @@ class _SignupScreenState extends State<SignupScreen> {
                                         suffixIcon: IconButton(
                                           onPressed: () {
                                             homeController.signinEye.value =
-                                            !homeController.signinEye.value;
+                                                !homeController.signinEye.value;
                                           },
                                           icon: homeController.signinEye.value
                                               ? const Icon(
-                                            Icons.visibility_off,
-                                            color: Colors.black,
-                                          )
+                                                  Icons.visibility_off,
+                                                  color: Colors.black,
+                                                )
                                               : const Icon(
-                                            Icons.visibility,
-                                            color: Colors.black,
-                                          ),
+                                                  Icons.visibility,
+                                                  color: Colors.black,
+                                                ),
                                         ),
                                         suffixIconColor: Colors.black,
                                         hintText: "Password",
@@ -327,62 +234,35 @@ class _SignupScreenState extends State<SignupScreen> {
                         const SizedBox(
                           height: 50,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              backgroundColor: Colors.white,
-                              child: IconButton(
-                                color: const Color(0xFFFFFFFF),
-                                onPressed: () async {
-                                  String? msg = await FbHelper.fbHelper.signUp(
-                                    email: emailc.text,
-                                    password: passwordc.text,
-                                  );
-                                  FbHelper.fbHelper.insertUserDetail(
-                                    email: emailc.text,
-                                    fname: fnamec.text,
-                                    lname: lnamec.text,
-                                  );
-                                  if (msg == "account successfully created !") {
-                                    final snackBar = SnackBar(
-                                      elevation: 0,
-                                      behavior: SnackBarBehavior.floating,
-                                      backgroundColor: Colors.transparent,
-                                      content: AwesomeSnackbarContent(
-                                        title: "Success",
-                                        message: "$msg",
-                                        contentType: ContentType.success,
-                                      ),
-                                    );
-                                    ScaffoldMessenger.of(context)
-                                      ..hideCurrentSnackBar()
-                                      ..showSnackBar(snackBar);
-                                    Get.back();
-                                  } else {
-                                    final snackBar = SnackBar(
-                                      elevation: 0,
-                                      behavior: SnackBarBehavior.floating,
-                                      backgroundColor: Colors.transparent,
-                                      content: AwesomeSnackbarContent(
-                                        title: "Failure",
-                                        message: "$msg",
-                                        contentType: ContentType.failure,
-                                      ),
-                                    );
-                                    ScaffoldMessenger.of(context)
-                                      ..hideCurrentSnackBar()
-                                      ..showSnackBar(snackBar);
-                                  }
-                                },
-                                icon: const Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.black,
-                                ),
-                              ),
+                        ElevatedButton(
+                          onPressed: () async {
+                            bool insignup = await FbHelper.fbHelper
+                                .signupUser(emailc.text, passwordc.text);
+                            if (insignup) {
+                              Get.back();
+                              Get.snackbar(
+                                "Login Success",
+                                "Your UserName Is $emailc", colorText: Colors.white,
+                                backgroundColor: Colors.black54,
+                              );
+                            } else {
+                              Get.snackbar(
+                                "Login Failed",
+                                "Please Try Again", colorText: Colors.white,
+                                backgroundColor: Colors.black54,
+                              );
+                            }
+                          },
+                          child: Text(
+                            "Sign Up",
+                            style:TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
                             ),
-                          ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(270, 50),
+                              backgroundColor: Colors.white),
                         ),
                       ],
                     ),

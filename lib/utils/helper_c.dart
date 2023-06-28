@@ -13,23 +13,21 @@ class FbHelper {
 
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-  Future<String?> signUp({
-    required email,
-    required password,
-  }) async {
-    String? msg;
+  Future<bool> signupUser(String email, String password) async {
+    print("========== $email");
+    bool issignup = false;
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     await firebaseAuth
-        .createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    )
+        .createUserWithEmailAndPassword(email: email, password: password)
         .then(
-          (value) => msg = "account successfully created !",
-    )
-        .catchError(
-          (e) => msg = "account creation failed !",
-    );
-    return msg;
+          (value) {
+        issignup = true;
+      },
+    ).catchError((error) {
+      print("========== $error");
+      issignup = false;
+    });
+    return issignup;
   }
 
   Future<void> insertUserDetail({
@@ -54,6 +52,7 @@ class FbHelper {
     required email,
     required password,
   }) async {
+    print("====== $email");
     String? msg;
     await firebaseAuth
         .signInWithEmailAndPassword(

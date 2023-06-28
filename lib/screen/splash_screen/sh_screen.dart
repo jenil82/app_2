@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
           () => isLogin == true
           ? Get.offAndToNamed('bottombar_screen')
           : Get.offAndToNamed('signin_screen'),

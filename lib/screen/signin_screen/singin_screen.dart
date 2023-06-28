@@ -26,7 +26,7 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold(appBar: AppBar(backgroundColor:Colors.white,title: Text("Sign In",style: TextStyle(color: Colors.black),),),
         backgroundColor: const Color(0xFFFFFFFF),
         body: Center(
           child: SingleChildScrollView(
@@ -366,42 +366,25 @@ class _SigninScreenState extends State<SigninScreen> {
                         child: IconButton(
                           color: const Color(0xfffef2fe),
                           onPressed: () async {
-                            if (emailc.text == "xyz@gmail.com" &&
-                                passwordc.text == "123456789") {
-                              String? msg = await FbHelper.fbHelper.signIn(
-                                email: emailc.text,
-                                password: passwordc.text,
+                            String? msg = await FbHelper.fbHelper.signIn(
+                              email: emailc.text,
+                              password: passwordc.text,
+                            );
+                            if (msg == "login successfully !") {
+                              final snackBar = SnackBar(
+                                elevation: 0,
+                                behavior: SnackBarBehavior.floating,
+                                backgroundColor: Colors.transparent,
+                                content: AwesomeSnackbarContent(
+                                  title: "Success",
+                                  message: "$msg",
+                                  contentType: ContentType.success,
+                                ),
                               );
-                              if (msg == "login successfully !") {
-                                final snackBar = SnackBar(
-                                  elevation: 0,
-                                  behavior: SnackBarBehavior.floating,
-                                  backgroundColor: Colors.transparent,
-                                  content: AwesomeSnackbarContent(
-                                    title: "Success",
-                                    message: "$msg",
-                                    contentType: ContentType.success,
-                                  ),
-                                );
-                                ScaffoldMessenger.of(context)
-                                  ..hideCurrentSnackBar()
-                                  ..showSnackBar(snackBar);
-                                Get.offAndToNamed('bottombar_screen');
-                              } else {
-                                final snackBar = SnackBar(
-                                  elevation: 0,
-                                  behavior: SnackBarBehavior.floating,
-                                  backgroundColor: Colors.transparent,
-                                  content: AwesomeSnackbarContent(
-                                    title: "Failure",
-                                    message: "$msg",
-                                    contentType: ContentType.failure,
-                                  ),
-                                );
-                                ScaffoldMessenger.of(context)
-                                  ..hideCurrentSnackBar()
-                                  ..showSnackBar(snackBar);
-                              }
+                              ScaffoldMessenger.of(context)
+                                ..hideCurrentSnackBar()
+                                ..showSnackBar(snackBar);
+                              Get.offAndToNamed('bottombar_screen');
                             } else {
                               final snackBar = SnackBar(
                                 elevation: 0,
@@ -409,7 +392,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 backgroundColor: Colors.transparent,
                                 content: AwesomeSnackbarContent(
                                   title: "Failure",
-                                  message: "login failed !",
+                                  message: "$msg",
                                   contentType: ContentType.failure,
                                 ),
                               );
