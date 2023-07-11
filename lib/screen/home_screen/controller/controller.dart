@@ -20,7 +20,6 @@ class HomeController extends GetxController {
   List<Widget> screen() {
     return [
       const HomeScreen(),
-      const BottombarsearchScreen(),
       const CartScreen(),
       const ProfileScreen(),
     ];
@@ -31,17 +30,6 @@ class HomeController extends GetxController {
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.home),
         title: ("Home"),
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.black,
-        textStyle: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 14,
-          color: Colors.black,
-        ),
-      ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(Icons.search),
-        title: ("Search"),
         activeColorPrimary: Colors.black,
         inactiveColorPrimary: Colors.black,
         textStyle: TextStyle(

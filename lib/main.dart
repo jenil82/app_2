@@ -6,7 +6,6 @@ import 'package:app_2/screen/cart_screen/ca_screen.dart';
 import 'package:app_2/screen/data_screen/data_screen.dart';
 import 'package:app_2/screen/file_screen/f_screen.dart';
 import 'package:app_2/screen/home_screen/view/screen.dart';
-import 'package:app_2/screen/s_screen/s_screen.dart';
 import 'package:app_2/screen/signin_screen/singin_screen.dart';
 import 'package:app_2/screen/signup_screen/sp_screen.dart';
 import 'package:app_2/screen/splash_screen/sh_screen.dart';
@@ -42,10 +41,6 @@ Future<void> main() async {
           GetPage(
             name: '/home_screen',
             page: () => const HomeScreen(),
-          ),
-          GetPage(
-            name: '/seeallsearch_screen',
-            page: () => const SeeallsearchScreen(),
           ),
           GetPage(
             name: '/bottombarsearch_screen',
