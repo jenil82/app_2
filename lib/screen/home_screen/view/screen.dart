@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Text(
                               "S H O P C A R T",
-                              style: GoogleFonts.secularOne(
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
                                 color: Colors.black,
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         child: Text(
                           "See all",
-                          style: GoogleFonts.secularOne(
+                          style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 15,
                             color: Colors.black,
@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Text(
                                 "Mobile",
-                                style: GoogleFonts.secularOne(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   color: Colors.black,
@@ -222,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Text(
                                 "TV",
-                                style: GoogleFonts.secularOne(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   color: Colors.black,
@@ -266,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Text(
                                 "Watch",
-                                style: GoogleFonts.secularOne(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   color: Colors.black,
@@ -310,7 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Text(
                                 "Laptop",
-                                style: GoogleFonts.secularOne(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   color: Colors.black,
@@ -327,14 +327,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Row(
                     children: [
-                      Text(
-                        "Popular Item",
-                        style: GoogleFonts.secularOne(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
-                      ),
                       const Spacer(),
                       InkWell(
                         splashColor: Colors.transparent,
@@ -344,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         child: Text(
                           "See",
-                          style: GoogleFonts.secularOne(
+                          style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 15,
                             color: Colors.black,
@@ -525,7 +517,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   Text(
                                                     "Total Price",
                                                     style:
-                                                    GoogleFonts.secularOne(
+                                                    TextStyle(
                                                       fontWeight:
                                                       FontWeight.w500,
                                                       fontSize: 15,
@@ -535,7 +527,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   Text(
                                                     "₹ $price",
                                                     style:
-                                                    GoogleFonts.secularOne(
+                                                    TextStyle(
                                                       fontWeight:
                                                       FontWeight.bold,
                                                       fontSize: 25,
@@ -631,7 +623,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       alignment: Alignment.center,
                                       child: Text(
                                         "${dataList[index].offer} %",
-                                        style: GoogleFonts.secularOne(
+                                        style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 18,
                                           color: Colors.white,
@@ -676,7 +668,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Text(
                                           "${dataList[index].name}",
-                                          style: GoogleFonts.secularOne(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18,
                                             color: Colors.black,
@@ -684,7 +676,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Text(
                                           "${dataList[index].category}",
-                                          style: GoogleFonts.secularOne(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
                                             color: Colors.black45,
@@ -695,7 +687,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Text(
                                           "₹ ${dataList[index].price}",
-                                          style: GoogleFonts.secularOne(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20,
                                             color: Colors.black,

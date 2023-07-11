@@ -364,7 +364,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         radius: 30,
                         backgroundColor: Colors.white,
                         child: IconButton(
-                          color: const Color(0xfffef2fe),
+                          color: const Color(0xfffcf9fc),
                           onPressed: () async {
                             String? msg = await FbHelper.fbHelper.signIn(
                               email: emailc.text,
